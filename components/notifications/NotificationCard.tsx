@@ -34,7 +34,7 @@ const NotificationCard: FC<lOrderNotificationCardProps> = ({
     router.push("/kitchen-hub/orders");
   };
   return (
-    <Card className="w-full overflow-hidden">
+    <Card className="w-full overflow-hidden !py-4 md:!py-6">
       <CardContent className="flex items-center justify-between gap-4">
         <div className="relative flex-shrink-0">
           <div className="bg-primary/10 flex h-10 w-10 items-center justify-center rounded-full">
