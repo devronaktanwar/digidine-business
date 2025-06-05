@@ -2,7 +2,6 @@
 // import Image from "next/image";
 import React, { useState } from "react";
 import { Button } from "../ui/button";
-import Link from "next/link";
 import { RiMenu2Fill } from "react-icons/ri";
 import MobileNav from "./MobileNav";
 import { useRouter } from "next/navigation";
@@ -73,14 +72,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-const navLinks = [
-  {
-    name: "My Orders",
-    href: "/my-orders",
-  },
-  {
-    name: "Profile",
-    href: "/my-profile",
-  },
-];
