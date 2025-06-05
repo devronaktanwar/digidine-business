@@ -2,7 +2,7 @@
 import { ExternalLink, ShoppingBag } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { FC } from "react";
-import { toast } from "sonner";
+// import { toast } from "sonner";
 import { Card, CardContent } from "../ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { Button } from "../ui/button";
