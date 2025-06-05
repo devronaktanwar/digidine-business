@@ -1,13 +1,14 @@
+import Navbar from "@/common/components/Navbar";
 import AppSidebar from "@/components/sidebar/AppSidebar";
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import { SidebarProvider} from "@/components/ui/sidebar";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <SidebarProvider className="w-full">
       <AppSidebar />
-      <main className="w-full">
-        <SidebarTrigger />
-        {children}
+      <main className="w-full flex flex-col">
+        <Navbar />
+        <div className="flex-1 px-8 bg-default py-6">{children}</div>
       </main>
     </SidebarProvider>
   );

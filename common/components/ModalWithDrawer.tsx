@@ -27,7 +27,7 @@ export default function ModalWithDrawer({
       <DrawerContent className="p-4">
         {!hideTitle && (
           <DrawerHeader>
-            <DrawerTitle className="text-center font-bold text-2xl">
+            <DrawerTitle className="text-center font-bold text-2xl text-secondary">
               {title}
             </DrawerTitle>
             <DrawerDescription className="text-center">

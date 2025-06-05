@@ -1,0 +1,51 @@
+export const notifications = [
+  {
+    customerInfo: { name: "John Doe" },
+    createdAt: "2022-01-01",
+    tableNo: 1,
+    isRead: false,
+    _id: "1",
+  },
+  {
+    customerInfo: { name: "John Doe" },
+    createdAt: "2022-01-01",
+    tableNo: 1,
+    isRead: false,
+    _id: "2",
+  },
+  {
+    customerInfo: { name: "John Doe" },
+    createdAt: "2022-01-01",
+    tableNo: 1,
+    isRead: false,
+    _id: "3",
+  },
+  {
+    customerInfo: { name: "John Doe" },
+    createdAt: "2022-01-01",
+    tableNo: 1,
+    isRead: false,
+    _id: "4",
+  },
+  {
+    customerInfo: { name: "John Doe" },
+    createdAt: "2022-01-01",
+    tableNo: 1,
+    isRead: false,
+    _id: "4",
+  },
+  {
+    customerInfo: { name: "John Doe" },
+    createdAt: "2022-01-01",
+    tableNo: 1,
+    isRead: false,
+    _id: "4",
+  },
+  {
+    customerInfo: { name: "John Doe" },
+    createdAt: "2022-01-01",
+    tableNo: 1,
+    isRead: false,
+    _id: "4",
+  },
+];

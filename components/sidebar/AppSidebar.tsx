@@ -1,3 +1,4 @@
+"use client";
 import {
   Sidebar,
   SidebarContent,
@@ -9,7 +10,7 @@ import {
   SidebarMenuItem,
 } from "../ui/sidebar";
 import {
-  ChartLine,
+  // ChartLine,
   ChartNoAxesCombined,
   LogOut,
   MessageCircleHeart,
@@ -17,6 +18,7 @@ import {
   UserRoundCog,
 } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { FC } from "react";
 import { IoNotificationsOutline } from "react-icons/io5";
 
@@ -26,11 +28,11 @@ const dashboardItems = [
     url: "/analytics",
     icon: <ChartNoAxesCombined size={20} />,
   },
-  {
-    title: "Sales",
-    url: "/sales",
-    icon: <ChartLine size={20} />,
-  },
+  // {
+  //   title: "Sales",
+  //   url: "/sales",
+  //   icon: <ChartLine size={20} />,
+  // },
   {
     title: "Notifications",
     url: "/notifications",
@@ -83,6 +85,7 @@ const groupItems = [
 ];
 
 const AppSidebar: FC = () => {
+  const pathname = usePathname();
   return (
     <Sidebar>
       <SidebarContent className="bg-white p-2 text-sm">
@@ -100,14 +103,15 @@ const AppSidebar: FC = () => {
               <SidebarMenu className="rounded-lg">
                 {group.items.map((item) => {
                   const fullPath = group.route + item.url;
-
+                  const isActive =
+                    pathname === fullPath || pathname.startsWith(fullPath);
                   return (
                     <SidebarMenuItem key={item.title}>
                       <SidebarMenuButton asChild>
                         <Link
                           href={fullPath}
                           className={`hover:bg-primary/10 flex items-center gap-2 rounded-md px-2 py-5 text-gray-500 transition-all ${
-                            true
+                            isActive
                               ? "bg-primary/10 text-primary font-semibold"
                               : ""
                           }`}

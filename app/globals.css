@@ -45,7 +45,9 @@
 
 :root {
   --radius: 0.625rem;
-  --primary:#D84040;
+  --primary:#4300FF;
+  --default-bg:#F5F5F5;
+  --secondary:#333446;
   --background: oklch(1 0 0);
   --foreground: oklch(0.141 0.005 285.823);
   --card: oklch(1 0 0);
@@ -53,7 +55,6 @@
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.141 0.005 285.823);
   --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.967 0.001 286.375);
   --secondary-foreground: oklch(0.21 0.006 285.885);
   --muted: oklch(0.967 0.001 286.375);
   --muted-foreground: oklch(0.552 0.016 285.938);
@@ -115,8 +116,14 @@
 .text-primary{
   color: var(--primary);
 }
+.text-secondary{
+  color: var(--secondary);
+}
 .bg-primary{
   background-color: var(--primary);
+}
+.bg-default{
+  background-color: var(--default-bg);
 }
 @media (min-width: 1200px) {
   .max-screen {
