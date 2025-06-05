@@ -4,9 +4,9 @@ import React from "react";
 const page = () => {
   return (
     <div>
-      <div className="flex flex-col gap-6">
+      <div className="flex flex-col gap-4 md:gap-6">
         <div className="flex flex-col gap-2">
-          <h1 className="text-2xl font-semibold text-secondary">
+          <h1 className="text-xl md:text-2xl font-semibold text-secondary">
             Notifications
           </h1>
           <p className="text-sm text-gray-500">
