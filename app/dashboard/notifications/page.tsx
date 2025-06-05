@@ -1,3 +1,4 @@
+import ActionContainer from "@/components/notifications/ActionContainer";
 import NotificationsList from "@/components/notifications/NotificationsList";
 import React from "react";
 
@@ -13,6 +14,9 @@ const page = () => {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi,
             architecto.
           </p>
+        </div>
+        <div>
+          <ActionContainer />
         </div>
         <NotificationsList />
       </div>

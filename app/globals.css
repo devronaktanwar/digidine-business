@@ -46,6 +46,7 @@
 :root {
   --radius: 0.625rem;
   --primary:#4300FF;
+  --primary-light:#4400ff27;
   --default-bg:#F5F5F5;
   --secondary:#333446;
   --background: oklch(1 0 0);
@@ -121,6 +122,9 @@
 }
 .bg-primary{
   background-color: var(--primary);
+}
+.bg-primary-light{
+  background-color: var(--primary-light);
 }
 .bg-default{
   background-color: var(--default-bg);
