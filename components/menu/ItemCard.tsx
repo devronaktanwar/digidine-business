@@ -9,19 +9,32 @@ import { twMerge } from "tailwind-merge";
 import ModalWithDrawer from "@/common/components/ModalWithDrawer";
 import Confirm from "@/common/components/Confirm";
 import { toast } from "sonner";
+import Info from "./Info";
+import { IItemCardProps } from "@/common/types/Menu";
 
 const ItemCard: FC<IItemCardProps> = ({
   image,
   label,
   description,
-  price,
+  sellingPrice,
+  originalPrice,
   type,
+  status,
 }) => {
   const [openModal, setOpenModal] = useState({
     info: false,
     delete: false,
     edit: false,
   });
+  const infoData = {
+    image,
+    label,
+    description,
+    originalPrice,
+    sellingPrice,
+    type,
+    status,
+  };
   return (
     <>
       <div className="relative border h-auto bg-white rounded-xl">
@@ -38,10 +51,13 @@ const ItemCard: FC<IItemCardProps> = ({
           <h2 className="text-xl font-semibold text-center">{label}</h2>
           <p className="text-sm text-center">{description}</p>
           <div className="flex justify-between items-center">
-            <div className="flex items-center gap-3">
-              <h2 className="text-xl font-bold text-center text-secondary">
-                ${price}
+            <div className="flex items-center gap-2">
+              <h2 className="text-xl font-bold text-center text-primary">
+                ${sellingPrice}
               </h2>
+              <p className="line-through text-gray-500 font-medium">
+                ${originalPrice}
+              </p>
             </div>
             <div className="flex gap-4 justify-end pt-2 cursor-pointer">
               <FiEye
@@ -67,12 +83,21 @@ const ItemCard: FC<IItemCardProps> = ({
         >
           <SiSquare size={20} />
         </div>
+        <div
+          className={twMerge(
+            "absolute left-4 top-4 px-2 py-1 text-[10px] rounded text-white font-medium",
+            status === "ACTIVE" ? "bg-primary" : "bg-red-500"
+          )}
+        >
+          {status}
+        </div>
       </div>
       <ModalWithDrawer
         isOpen={openModal.info}
         onClose={() => setOpenModal({ ...openModal, info: false })}
+        headerClassName="hidden"
       >
-        <h1>hello</h1>
+        <Info {...infoData} />
       </ModalWithDrawer>
       <ModalWithDrawer
         isOpen={openModal.delete}
@@ -93,10 +118,3 @@ const ItemCard: FC<IItemCardProps> = ({
 };
 
 export default ItemCard;
-interface IItemCardProps {
-  image: string;
-  label: string;
-  description: string;
-  price: number;
-  type: string;
-}
