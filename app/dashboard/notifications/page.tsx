@@ -7,12 +7,11 @@ const page = () => {
     <div>
       <div className="flex flex-col gap-4 md:gap-6">
         <div className="flex flex-col gap-2">
-          <h1 className="text-xl md:text-2xl font-semibold text-secondary">
+          <h1 className="text-xl md:text-2xl font-bold text-secondary">
             Notifications
           </h1>
           <p className="text-sm text-gray-500">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi,
-            architecto.
+            Receive alerts for new orders.
           </p>
         </div>
         <div>

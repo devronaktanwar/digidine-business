@@ -9,8 +9,11 @@ const Navbar = () => {
   return (
     <div className="border-b sticky top-0 bg-white z-20">
       <div className="flex items-center justify-between py-4 px-4 md:px-8">
-        <div>
-          <SidebarTrigger className="!text-xl" />
+        <div className="flex items-center gap-4">
+          <SidebarTrigger />
+          <h2 className="font-semibold text-lg md:text-xl text-secondary">
+            Good Morning <span className="text-primary">Ronak!</span>
+          </h2>
         </div>
         <div
           className="relative cursor-pointer"

@@ -26,11 +26,11 @@ export default function ModalWithDrawer({
     <Drawer open={isOpen} onOpenChange={onClose}>
       <DrawerContent className="p-4">
         {!hideTitle && (
-          <DrawerHeader>
-            <DrawerTitle className="text-center font-bold text-2xl text-secondary">
+          <DrawerHeader className="hidden">
+            <DrawerTitle className="text-center font-bold text-2xl text-secondary hidden">
               {title}
             </DrawerTitle>
-            <DrawerDescription className="text-center">
+            <DrawerDescription className="text-center hidden">
               {description}
             </DrawerDescription>
           </DrawerHeader>
