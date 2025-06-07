@@ -42,7 +42,7 @@ export default function ModalWithDrawer({
 
   return isMobile ? (
     <Drawer open={isOpen} onOpenChange={onClose}>
-      <DrawerContent className={twMerge("p-4 !max-h-[90dvh] overflow-auto h-fit", dialogClassName)}>
+      <DrawerContent className={twMerge("p-4 !max-h-[95dvh] overflow-auto", dialogClassName)}>
         <DrawerHeader className={headerClassName}>
           <DrawerTitle
             className={twMerge(
@@ -61,7 +61,7 @@ export default function ModalWithDrawer({
     </Drawer>
   ) : (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className={"max-h-[80dvh] overflow-auto "+dialogClassName}>
+      <DialogContent className={"max-h-[95dvh] overflow-auto "+dialogClassName}>
         {!hideTitle && (
           <DialogHeader>
             <DialogTitle

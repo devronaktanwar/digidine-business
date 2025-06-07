@@ -36,11 +36,11 @@ const ActionContainer = () => {
       <ModalWithDrawer
         isOpen={openModal.add}
         onClose={() => setOpenModal({ ...openModal, add: false })}
-        dialogClassName="!max-w-2xl"
+        dialogClassName="!max-w-2xl !p-0 !pt-6 !px-6"
         title="Add New Item"
         description="Add a new item to the menu"
       >
-        <AddItem />
+        <AddItem/>
       </ModalWithDrawer>
     </>
   );
