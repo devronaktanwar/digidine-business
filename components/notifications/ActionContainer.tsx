@@ -14,7 +14,7 @@ const ActionContainer = () => {
   });
   return (
     <>
-      <div className="flex justify-between items-center flex-wrap">
+      <div className="flex justify-between lg:items-center flex-col-reverse gap-4 lg:gap-2 lg:flex-row">
         <div className="flex w-fit p-1 bg-white rounded-sm gap-0.5 md:gap-2">
           {tabs.map((tab) => {
             return (
