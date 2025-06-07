@@ -16,13 +16,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 
 interface Addon {
@@ -239,262 +233,258 @@ export default function AddItem() {
 
   return (
     <div className="">
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="space-y-2">
-                <Label htmlFor="label">Item Name</Label>
-                <Input
-                  id="label"
-                  name="label"
-                  placeholder="e.g., Margherita Pizza"
-                  value={formData.label}
-                  onChange={handleInputChange}
-                />
-              </div>
+      <form onSubmit={handleSubmit} className="space-y-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="space-y-2">
+            <Label htmlFor="label">Item Name</Label>
+            <Input
+              id="label"
+              name="label"
+              placeholder="e.g., Margherita Pizza"
+              value={formData.label}
+              onChange={handleInputChange}
+            />
+          </div>
 
-              <div className="space-y-2">
-                <Label htmlFor="type">Type</Label>
-                <Select
-                  value={formData.type}
-                  onValueChange={(value) => handleSelectChange("type", value)}
-                >
-                  <SelectTrigger>
-                    <SelectValue placeholder="Select item type" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {menuTypes.map((type) => (
-                      <SelectItem key={type.value} value={type.value}>
-                        {type.label}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
-            </div>
+          <div className="space-y-2">
+            <Label htmlFor="type">Type</Label>
+            <Select
+              value={formData.type}
+              onValueChange={(value) => handleSelectChange("type", value)}
+            >
+              <SelectTrigger>
+                <SelectValue placeholder="Select item type" />
+              </SelectTrigger>
+              <SelectContent>
+                {menuTypes.map((type) => (
+                  <SelectItem key={type.value} value={type.value}>
+                    {type.label}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+        </div>
 
-            <div className="space-y-2">
-              <Label htmlFor="description">Description</Label>
-              <Textarea
-                id="description"
-                name="description"
-                placeholder="Describe your menu item, ingredients, and what makes it special..."
-                className="min-h-[100px]"
-                value={formData.description}
-                onChange={handleInputChange}
-              />
-              <p className="text-sm text-muted-foreground">
-                Provide a detailed description that will entice customers.
-              </p>
-            </div>
+        <div className="space-y-2">
+          <Label htmlFor="description">Description</Label>
+          <Textarea
+            id="description"
+            name="description"
+            placeholder="Describe your menu item, ingredients, and what makes it special..."
+            className="min-h-[100px]"
+            value={formData.description}
+            onChange={handleInputChange}
+          />
+          <p className="text-sm text-muted-foreground">
+            Provide a detailed description that will entice customers.
+          </p>
+        </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="space-y-2">
-                <Label htmlFor="originalPrice">Original Price ($)</Label>
-                <Input
-                  id="originalPrice"
-                  name="originalPrice"
-                  type="number"
-                  step="0.01"
-                  placeholder="0.00"
-                  value={formData.originalPrice}
-                  onChange={handleInputChange}
-                />
-                <p className="text-sm text-muted-foreground">
-                  The regular price of the item.
-                </p>
-              </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="space-y-2">
+            <Label htmlFor="originalPrice">Original Price ($)</Label>
+            <Input
+              id="originalPrice"
+              name="originalPrice"
+              type="number"
+              step="0.01"
+              placeholder="0.00"
+              value={formData.originalPrice}
+              onChange={handleInputChange}
+            />
+            <p className="text-sm text-muted-foreground">
+              The regular price of the item.
+            </p>
+          </div>
 
-              <div className="space-y-2">
-                <Label htmlFor="sellingPrice">Selling Price ($)</Label>
-                <Input
-                  id="sellingPrice"
-                  name="sellingPrice"
-                  type="number"
-                  step="0.01"
-                  placeholder="0.00"
-                  value={formData.sellingPrice}
-                  onChange={handleInputChange}
-                />
-                <p className="text-sm text-muted-foreground">
-                  The current selling price.
-                </p>
-              </div>
-            </div>
+          <div className="space-y-2">
+            <Label htmlFor="sellingPrice">Selling Price ($)</Label>
+            <Input
+              id="sellingPrice"
+              name="sellingPrice"
+              type="number"
+              step="0.01"
+              placeholder="0.00"
+              value={formData.sellingPrice}
+              onChange={handleInputChange}
+            />
+            <p className="text-sm text-muted-foreground">
+              The current selling price.
+            </p>
+          </div>
+        </div>
 
-            <div className="space-y-2">
-              <Label htmlFor="category">Category</Label>
-              <Select
-                value={formData.category}
-                onValueChange={(value) => handleSelectChange("category", value)}
-              >
-                <SelectTrigger>
-                  <SelectValue placeholder="Select category" />
-                </SelectTrigger>
-                <SelectContent>
-                  {menuCategories.map((category) => (
-                    <SelectItem key={category.value} value={category.value}>
-                      {category.label}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-              <p className="text-sm text-muted-foreground">
-                Choose the most appropriate category for dietary preferences.
-              </p>
-            </div>
+        <div className="space-y-2">
+          <Label htmlFor="category">Category</Label>
+          <Select
+            value={formData.category}
+            onValueChange={(value) => handleSelectChange("category", value)}
+          >
+            <SelectTrigger>
+              <SelectValue placeholder="Select category" />
+            </SelectTrigger>
+            <SelectContent>
+              {menuCategories.map((category) => (
+                <SelectItem key={category.value} value={category.value}>
+                  {category.label}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+          <p className="text-sm text-muted-foreground">
+            Choose the most appropriate category for dietary preferences.
+          </p>
+        </div>
 
-            <div className="space-y-2">
-              <Label>Item Image</Label>
-              <div className="space-y-4">
-                {!imagePreview ? (
-                  <div className="border-2 border-dashed border-muted-foreground/25 rounded-lg p-6">
-                    <div className="flex flex-col items-center justify-center space-y-2">
-                      <Upload className="h-8 w-8 text-muted-foreground" />
-                      <div className="text-center">
-                        <p className="text-sm text-muted-foreground">
-                          Click to upload or drag and drop
-                        </p>
-                        <p className="text-xs text-muted-foreground">
-                          PNG, JPG, JPEG or WEBP (max 5MB)
-                        </p>
-                      </div>
-                      <Input
-                        id="image-upload"
-                        type="file"
-                        accept="image/*"
-                        className="hidden"
-                        onChange={handleImageChange}
-                      />
-                      <Button
-                        type="button"
-                        variant="outline"
-                        onClick={() =>
-                          document.getElementById("image-upload")?.click()
-                        }
-                      >
-                        Choose File
-                      </Button>
-                    </div>
+        <div className="space-y-2">
+          <Label>Item Image</Label>
+          <div className="space-y-4">
+            {!imagePreview ? (
+              <div className="border-2 border-dashed border-muted-foreground/25 rounded-lg p-6">
+                <div className="flex flex-col items-center justify-center space-y-2">
+                  <Upload className="h-8 w-8 text-muted-foreground" />
+                  <div className="text-center">
+                    <p className="text-sm text-muted-foreground">
+                      Click to upload or drag and drop
+                    </p>
+                    <p className="text-xs text-muted-foreground">
+                      PNG, JPG, JPEG or WEBP (max 5MB)
+                    </p>
                   </div>
-                ) : (
-                  <div className="relative">
-                    <div className="relative w-full h-48 rounded-lg overflow-hidden border">
-                      <Image
-                        src={imagePreview || "/placeholder.svg"}
-                        alt="Preview"
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                    <Button
-                      type="button"
-                      variant="destructive"
-                      size="sm"
-                      className="absolute top-2 right-2"
-                      onClick={removeImage}
-                    >
-                      <X className="h-4 w-4" />
-                    </Button>
-                  </div>
-                )}
+                  <Input
+                    id="image-upload"
+                    type="file"
+                    accept="image/*"
+                    className="hidden"
+                    onChange={handleImageChange}
+                  />
+                  <Button
+                    type="button"
+                    variant="outline"
+                    onClick={() =>
+                      document.getElementById("image-upload")?.click()
+                    }
+                  >
+                    Choose File
+                  </Button>
+                </div>
               </div>
-              <p className="text-sm text-muted-foreground">
-                Upload a high-quality image of your menu item.
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              <div className="flex items-center justify-between">
-                <div>
-                  <Label className="text-base font-medium">Add-ons</Label>
-                  <p className="text-sm text-muted-foreground">
-                    Optional extras customers can add to this item.
-                  </p>
+            ) : (
+              <div className="relative">
+                <div className="relative w-full h-48 rounded-lg overflow-hidden border">
+                  <Image
+                    src={imagePreview || "/placeholder.svg"}
+                    alt="Preview"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
                 <Button
                   type="button"
-                  variant="outline"
+                  variant="destructive"
                   size="sm"
-                  onClick={addAddon}
+                  className="absolute top-2 right-2"
+                  onClick={removeImage}
                 >
-                  <Plus className="h-4 w-4 mr-2" />
-                  Add Add-on
+                  <X className="h-4 w-4" />
                 </Button>
               </div>
+            )}
+          </div>
+          <p className="text-sm text-muted-foreground">
+            Upload a high-quality image of your menu item.
+          </p>
+        </div>
 
-              {formData.addons.length > 0 && (
-                <div className="space-y-4">
-                  {formData.addons.map((addon, index) => (
-                    <Card key={index} className="p-4">
-                      <div className="flex items-start justify-between mb-4">
-                        <h4 className="font-medium">Add-on #{index + 1}</h4>
-                        <Button
-                          type="button"
-                          variant="ghost"
-                          size="sm"
-                          onClick={() => removeAddon(index)}
-                        >
-                          <Minus className="h-4 w-4" />
-                        </Button>
-                      </div>
-
-                      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                        <div className="space-y-2">
-                          <Label>Name</Label>
-                          <Input
-                            placeholder="e.g., Extra Cheese"
-                            value={addon.name}
-                            onChange={(e) =>
-                              updateAddon(index, "name", e.target.value)
-                            }
-                          />
-                        </div>
-
-                        <div className="space-y-2">
-                          <Label>Original Price ($)</Label>
-                          <Input
-                            type="number"
-                            step="0.01"
-                            placeholder="0.00"
-                            value={addon.originalPrice}
-                            onChange={(e) =>
-                              updateAddon(
-                                index,
-                                "originalPrice",
-                                e.target.value
-                              )
-                            }
-                          />
-                        </div>
-
-                        <div className="space-y-2">
-                          <Label>Selling Price ($)</Label>
-                          <Input
-                            type="number"
-                            step="0.01"
-                            placeholder="0.00"
-                            value={addon.sellingPrice}
-                            onChange={(e) =>
-                              updateAddon(index, "sellingPrice", e.target.value)
-                            }
-                          />
-                        </div>
-                      </div>
-                    </Card>
-                  ))}
-                </div>
-              )}
+        <div className="space-y-4">
+          <div className="flex items-center justify-between">
+            <div>
+              <Label className="text-base font-medium">Add-ons</Label>
+              <p className="text-sm text-muted-foreground">
+                Optional extras customers can add to this item.
+              </p>
             </div>
+            <Button
+              type="button"
+              variant="outline"
+              size="sm"
+              onClick={addAddon}
+            >
+              <Plus className="h-4 w-4 mr-2" />
+              Add Add-on
+            </Button>
+          </div>
 
-            <div className="flex gap-4 pt-4 sticky bottom-0 py-2 bg-white">
-              <Button type="submit" className="flex-1">
-                Add Menu Item
-              </Button>
-              <Button type="button" variant="outline" onClick={resetForm}>
-                Reset Form
-              </Button>
+          {formData.addons.length > 0 && (
+            <div className="space-y-4">
+              {formData.addons.map((addon, index) => (
+                <Card key={index} className="p-4">
+                  <div className="flex items-start justify-between mb-4">
+                    <h4 className="font-medium">Add-on #{index + 1}</h4>
+                    <Button
+                      type="button"
+                      variant="ghost"
+                      size="sm"
+                      onClick={() => removeAddon(index)}
+                    >
+                      <Minus className="h-4 w-4" />
+                    </Button>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div className="space-y-2">
+                      <Label>Name</Label>
+                      <Input
+                        placeholder="e.g., Extra Cheese"
+                        value={addon.name}
+                        onChange={(e) =>
+                          updateAddon(index, "name", e.target.value)
+                        }
+                      />
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label>Original Price ($)</Label>
+                      <Input
+                        type="number"
+                        step="0.01"
+                        placeholder="0.00"
+                        value={addon.originalPrice}
+                        onChange={(e) =>
+                          updateAddon(index, "originalPrice", e.target.value)
+                        }
+                      />
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label>Selling Price ($)</Label>
+                      <Input
+                        type="number"
+                        step="0.01"
+                        placeholder="0.00"
+                        value={addon.sellingPrice}
+                        onChange={(e) =>
+                          updateAddon(index, "sellingPrice", e.target.value)
+                        }
+                      />
+                    </div>
+                  </div>
+                </Card>
+              ))}
             </div>
-          </form>
+          )}
+        </div>
+
+        <div className="flex gap-4 pt-4 sticky bottom-0 py-2 bg-white">
+          <Button type="submit" className="flex-1">
+            Add Menu Item
+          </Button>
+          <Button type="button" variant="outline" onClick={resetForm}>
+            Reset Form
+          </Button>
+        </div>
+      </form>
     </div>
   );
 }
